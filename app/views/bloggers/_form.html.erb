@@ -1,0 +1,18 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <li style="color: red">
+        <%= e %>
+        </li>
+    <% end %>
+<% end %>
+
+<%= form_with(model: @blogger) do |f|%>
+<%=f.label :name%>
+<%=f.text_field :name%>
+<%=f.label :bio%>
+<%=f.text_area :bio%>
+<%=f.label :age%>
+<%=f.text_field :age%>
+
+<%=f.submit%>
+<%end%>
