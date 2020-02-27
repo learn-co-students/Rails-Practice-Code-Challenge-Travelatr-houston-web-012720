@@ -1,0 +1,23 @@
+
+<% like_button = like_button %>
+<% dislike_button = dislike_button %>
+
+<h1><%= @post.title %></h1>
+
+<%= @post.content %>
+
+<br>
+<%= button_to "Like", like_button_path %>
+<%= button_to "Dislike", method: dislike_button %>
+<br><br>
+
+Likes: <%= @post.likes %>
+
+<br><br>
+
+Destination: <%= link_to @post.destination.name, destination_path(@post.destination) %>
+<br>
+Blogger: <%= link_to @post.blogger.name, destination_path(@post.blogger) %>
+
+
+
