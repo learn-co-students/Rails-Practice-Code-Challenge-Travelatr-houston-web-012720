@@ -1,0 +1,19 @@
+<h1>Blogger</h1>
+
+<label>Name</label><br>
+<label><%=@blogger.name%></label><br>
+<label>Bio</label><br>
+<label><%=@blogger.bio%></label><br>
+<label>Age</label><br>
+<label><%=@blogger.age%></label><br>
+
+<label> Total likes <label><br>
+<label><%=@blogger.likes%></label><br>
+<label> Most featured </label>
+<%=@blogger.featured_post.title%>
+
+<label> Top 5 <label><br>
+<%@blogger.top_5.each { |destination|%>
+ <label><%="#{destination.name} #{destination.post_count(@blogger)}" %> </label>
+
+<%}%>

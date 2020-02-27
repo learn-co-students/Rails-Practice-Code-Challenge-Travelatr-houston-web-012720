@@ -1,0 +1,16 @@
+<h1>Post</h1>
+<label>Name</label><br>
+<label><%=@post.title%></label><br>
+<label>Conent</label><br>
+<p><%=@post.content%></p><br>
+<label>Likes</label><br>
+<label><%=@post.likes%></label><br>
+
+<label> Blogger <label><br>
+<label><%=link_to @post.blogger.name, blogger_path(@post.blogger)%></label><br>
+<label> Destination </label>
+<label><%=link_to @post.destination.name, destination_path(@post.destination)%></label><br>
+
+<%=form_for(@post, url: like_post_path(@post), method: :get) do |f|%>
+<%=f.submit "like"%>
+<%end%>
