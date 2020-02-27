@@ -1,0 +1,10 @@
+
+<h1>Posts</h1>
+
+<ol>
+  <% @posts.each do |p| %>
+    <li>
+      <%= link_to p.title, post_path(p) %>
+    </li>
+  <% end %>
+</ol>
