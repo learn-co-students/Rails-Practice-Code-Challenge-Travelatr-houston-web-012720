@@ -1,0 +1,18 @@
+<h1>Post Info</h1>
+
+<label>Author:</label>
+<%= link_to @post.blogger.name, blogger_path%>
+<br/>
+<label>Destination</label>
+<%= link_to @post.destination.name, destination_path%>
+
+<br/>
+<%= form_for @post do |f| %>
+<%= f.submit "Edit" %>
+<% end %>
+
+<%= form_with model: @post, method: :delete do |f| %>
+<%= f.submit "delete Post" %>
+
+
+<% end %>
